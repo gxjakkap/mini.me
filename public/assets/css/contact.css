@@ -1,3 +1,9 @@
+.contact-main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -65,4 +71,14 @@
         background-color: #0000001a;
     }
 
+}
+
+.contact-direct-container {
+    h2 {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        font-size: large;
+    }
 }
