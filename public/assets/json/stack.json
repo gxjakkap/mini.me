@@ -1,0 +1,94 @@
+{
+    "front": [
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913545/guntxjakka.me/techstack/html_zzf6lo.svg",
+            "name": "HTML",
+            "xp": 1
+        },
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913543/guntxjakka.me/techstack/css_dywyn4.svg",
+            "name": "CSS",
+            "xp": 0
+        },
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913549/guntxjakka.me/techstack/javascript_gyadov.svg",
+            "name": "JavaScript",
+            "xp": 2
+        },
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913541/guntxjakka.me/techstack/react_ogtyvz.svg",
+            "name": "React.js",
+            "xp": 1
+        },
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913541/guntxjakka.me/techstack/svelte_asex0l.svg",
+            "name": "Svelte",
+            "xp": 0
+        },
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913541/guntxjakka.me/techstack/tailwindcss_vibipx.svg",
+            "name": "TailwindCSS",
+            "xp": 1
+        }
+    ],
+    "back": [
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913547/guntxjakka.me/techstack/node_jwkj7q.svg",
+            "name": "Node.js",
+            "xp": 2
+        },
+        
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913689/guntxjakka.me/techstack/nextjs_ccv4nb.svg",
+            "name": "Next.js",
+            "xp": 1
+        },
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913541/guntxjakka.me/techstack/svelte_asex0l.svg",
+            "name": "SvelteKit",
+            "xp": 1
+        },
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913548/guntxjakka.me/techstack/typescript_iffxwn.svg",
+            "name": "TypeScript",
+            "xp": 2
+        },
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913544/guntxjakka.me/techstack/express_qoip3w.svg",
+            "name": "Express.js",
+            "xp": 1
+        },
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657915009/guntxjakka.me/techstack/firebase_vxbrn2.png",
+            "name": "Firebase",
+            "xp": 1
+        },
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913547/guntxjakka.me/techstack/php_abnfk2.svg",
+            "name": "php",
+            "xp": 0
+        },
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913545/guntxjakka.me/techstack/mysql_uct7sm.svg",
+            "name": "MySQL",
+            "xp": 0
+        }
+    ],
+    "tools": [
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913548/guntxjakka.me/techstack/vsc_jz4esd.svg",
+            "name": "VS Code",
+            "xp": 1
+        },
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913545/guntxjakka.me/techstack/git_ya88mr.svg",
+            "name": "Git",
+            "xp": 0
+        },
+        {
+            "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913541/guntxjakka.me/techstack/python_ltdua2.svg",
+            "name": "Python",
+            "xp": 2
+        }
+    ]
+}
