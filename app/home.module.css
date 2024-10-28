@@ -1,0 +1,26 @@
+.hometitlename {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.hometitlename:hover {
+    transform: translateY(-10px);
+}
+
+.hometitlehand {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: 70% 70%;
+}
+
+.hometitlehand:hover {
+    animation: handwave 0.6s infinite;
+}
+
+@keyframes handwave {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(20deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-20deg); }
+    100% { transform: rotate(0deg); }
+}

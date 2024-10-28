@@ -1,8 +1,44 @@
 {
-	"scripts": {
-		"dev": "light-server -s public -b 127.0.0.1 -p 5500"
-	},
-	"dependencies": {
-		"light-server": "^2.9.1"
-	}
+  "name": "@gxjakkap/me",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@contentful/rich-text-plain-text-renderer": "^16.0.3",
+    "@contentful/rich-text-types": "^16.0.3",
+    "@heroicons/react": "^2.1.5",
+    "@madebyconnor/rich-text-to-jsx": "^2.2.1",
+    "@marsidev/react-turnstile": "^1.0.2",
+    "@vercel/kv": "^1.0.1",
+    "@vercel/speed-insights": "^1.0.3",
+    "contentful": "^9.3.5",
+    "dotenv": "^16.0.3",
+    "next": "14.2.14",
+    "next-themes": "^0.3.0",
+    "radium": "^0.26.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-lazy-load-image-component": "^1.6.2",
+    "react-loader-spinner": "^5.3.4",
+    "reading-time": "^1.5.0",
+    "swr": "^2.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/radium": "^0.24.8",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-lazy-load-image-component": "^1.6.4",
+    "@vercel/node": "^3.1.5",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.14",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5"
+  }
 }
