@@ -1,11 +1,29 @@
 'use client'
 
 import { Turnstile } from "@marsidev/react-turnstile"
-import { Dispatch, SetStateAction } from "react"
+import { Dispatch, FormEvent, SetStateAction } from "react"
 
-export function ContactForm({ sa, stts }: { sa: (formData: FormData) => Promise<boolean>, stts: Dispatch<SetStateAction<"success" | "error" | "expired" | "required">> }) {
+import { HandleFormSubmitResponse, TurnstileStatus } from "@/app/contact/actions"
+
+type SetFormStatus = Dispatch<SetStateAction<"success" | "failed" | "pending" | "loading" | "captcha">>
+
+export function ContactForm({ sa, stts, sfs, tts }: { sa: (formData: FormData, turnstileStatus: TurnstileStatus) => Promise<HandleFormSubmitResponse>, stts: Dispatch<SetStateAction<"success" | "error" | "expired" | "required">>, sfs: SetFormStatus, tts: TurnstileStatus }) {
+    const handleFormSubmit = async (data: FormData) => {
+        if (!data.get('inq') || !data.get('name') || !data.get('email')){
+            sfs('failed')
+            return
+        }
+        const res = await sa(data, tts)
+        if (res.status === 200){
+            sfs('success')
+        }
+        else {
+            sfs('failed')
+        }
+    }
+    
     return (
-        <form className="flex flex-col gap-y-3" action={sa}>
+        <form className="flex flex-col gap-y-3" action={(formData: FormData) => handleFormSubmit(formData)}>
             <div className="">
                 <label className="font-inter" htmlFor="name">Your name</label>
                 <input className="w-full px-4 py-[0.5rem] box-border border-2 border-solid border-[#ccc] rounded-[0.4rem] bg-[#f8f8f8] font-inter resize-none" type="text" name="name" id="name" placeholder="Rejoice"/>
@@ -26,7 +44,7 @@ export function ContactForm({ sa, stts }: { sa: (formData: FormData) => Promise<
                     stts("success")
                 }}
             />
-            <button id="submit-btn" className="inline-block outline-0 border-none cursor-pointer rounded-[0.4rem] text-base font-inter h-10 bg-[#0000000d] hover:bg-[#0000001a] text-[#0e0e10] px-4" type="submit">Submit</button>
+            <button id="submit-btn" className="inline-block outline-0 border-none cursor-pointer rounded-[0.4rem] text-base font-inter h-10 bg-[#0000000d] text-[#333333] hover:bg-[#33333333] dark:bg-[#e0e0e01a] dark:text-[#e0e0e0] dark:hover:bg-[#e0e0e033] px-4" type="submit">Submit</button>
         </form>
     )
 }

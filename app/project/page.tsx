@@ -19,8 +19,8 @@ const getData = cache(getAllProjects)
 export default async function ProjectHome() {
     const data = await getData()
     return (
-        <main className="flex flex-col flex-grow mx-auto lg:ml-[25%] lg:mr-0 pt-4 lg:pt-10 lg:mt-14 w-3/4 lg:w-1/2 pb-28">
-            <h1 className="font-inter font-medium text-4xl lg:text-3xl lg:mt-4 text-center lg:text-left flex gap-x-2">My Projects <FolderIcon className="text-[#f7b81d] w-8" /></h1>
+        <main className="mx-auto flex w-3/4 grow flex-col pb-28 pt-4 lg:ml-[25%] lg:mr-0 lg:mt-14 lg:w-1/2 lg:pt-10">
+            <h1 className="flex gap-x-2 text-center font-inter text-4xl font-medium lg:mt-4 lg:text-left lg:text-3xl">My Projects <FolderIcon className="w-8 text-[#f7b81d]" /></h1>
             <div className="flex w-full">
                 <Suspense fallback={ProjectListLoading()}>
                     <ProjectList data={data} />

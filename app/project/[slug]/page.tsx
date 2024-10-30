@@ -1,6 +1,6 @@
 'use server'
 /// <reference path="@/lib/types/rttjsx.d.ts">
-import { Metadata, ResolvingMetadata } from 'next'
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cache, Suspense } from 'react'
 
@@ -8,13 +8,11 @@ import { getProjectData } from "@/lib/contentful"
 import { ProjectContent } from '@/components/projects/content/layout'
 import { ProjectLoading } from '@/components/projects/content/loading'
 
-type Props = { params: { slug: string } }
-type MetadataProps = { params: Promise<{ slug: string }> }
-
+type Props = { params: Promise<{ slug: string }> }
 
 const getData = cache(getProjectData)
 
-export async function generateMetadata({ params }: MetadataProps, parent: ResolvingMetadata): Promise<Metadata>{
+export async function generateMetadata({ params }: Props): Promise<Metadata>{
     const slug = (await params).slug
     const data = await getData(slug)
 
@@ -41,7 +39,7 @@ export async function generateMetadata({ params }: MetadataProps, parent: Resolv
 }
 
 export default async function ProjectPage({ params }: Props){
-    const slug = params.slug
+    const slug = (await params).slug
     const data = await getData(slug)    
     if (data.error){
         if (data.errorCode === 404){

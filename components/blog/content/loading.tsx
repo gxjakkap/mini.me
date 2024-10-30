@@ -1,5 +1,5 @@
 
-export const ProjectLoading = () => {
+export const BlogLoading = () => {
     return (
         <article className="mx-auto flex w-3/4 grow flex-col pb-28 pt-4 lg:ml-[25%] lg:mr-0 lg:mt-14 lg:w-1/2 lg:pt-10">
             <div className="flex animate-pulse flex-col gap-y-4 lg:gap-y-2">

@@ -77,6 +77,7 @@ export async function getPostData(slug: string): Promise<BlogData> {
         }
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { name, description, imageLink, date, tags, content } = res.items[0].fields as any
 
     const data = {
@@ -102,9 +103,10 @@ export const getAllBlogInfo = async () => {
         content_type: 'blogPost'
     })
 
-    let dataArray: AllBlogData[] = []
+    const dataArray: AllBlogData[] = []
 
     res.items.forEach(post => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { name, slug, description, imageLink, date, tags } = post.fields as any
         const data = {
             title: name,
@@ -129,9 +131,10 @@ export const getLatestBlog = async () => {
         content_type: 'blogPost'
     })
 
-    let dataArray: AllBlogData[] = []
+    const dataArray: AllBlogData[] = []
 
     res.items.forEach(post => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { name, slug, description, imageLink, date, tags } = post.fields as any
         const data = {
             title: name,
@@ -165,6 +168,7 @@ export const getProjectData = async (slug: string): Promise<ProjectData> => {
         }
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { title, description, thumbnail, projectLink, githubLink, tags, content, stack } = res.items[0].fields as any
 
     const data = {
@@ -189,9 +193,10 @@ export const getAllProjects = async () => {
         content_type: 'projects'
     })
 
-    let dataArray: AllProjectData[] = []
+    const dataArray: AllProjectData[] = []
 
     res.items.forEach(prj => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { title, description, thumbnail, tags, slug } = prj.fields as any
         const { createdAt } = prj.sys
         const data = {

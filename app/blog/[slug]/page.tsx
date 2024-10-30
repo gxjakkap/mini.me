@@ -1,20 +1,22 @@
 'use server'
 /// <reference path="@/lib/types/rttjsx.d.ts">
-import { Metadata, ResolvingMetadata } from 'next'
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cache, Suspense } from 'react'
 
 import { getPostData } from "@/lib/contentful"
-import { BlogContent } from '@/components/blog/content/content-layout'
-import { BlogLoading } from '@/components/blog/content/content-loading'
+import { BlogContent } from '@/components/blog/content/layout'
+import { BlogLoading } from '@/components/blog/content/loading'
 
-type Props = { params: { slug: string } }
+type Props = {
+    params: Promise<{ slug: string }>
+}
 type MetadataProps = { params: Promise<{ slug: string }> }
 
 
 const getData = cache(getPostData)
 
-export async function generateMetadata({ params }: MetadataProps, parent: ResolvingMetadata): Promise<Metadata>{
+export async function generateMetadata({ params }: MetadataProps): Promise<Metadata>{
     const slug = (await params).slug
     const data = await getData(slug)
 
@@ -41,10 +43,8 @@ export async function generateMetadata({ params }: MetadataProps, parent: Resolv
 }
 
 export default async function BlogPage({ params }: Props){
-    const slug = params.slug
+    const slug = (await params).slug
     const data = await getData(slug)
-
-    console.log(data)
     
     if (data.error){
         if (data.errorCode === 404){

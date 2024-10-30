@@ -21,9 +21,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
         <link href="https://mastodon.social/@jakka" rel="me" />
         <ThemeProvider attribute="class" enableSystem={false} >
-            <body suppressHydrationWarning className={`${inter.variable} ${promptReg.variable} ${promptMed.variable} antialiased flex flex-col flex-grow bg-[#f2f2f2] dark:bg-[#1a1a1a] min-h-screen`}>
+            <body suppressHydrationWarning className={`${inter.variable} ${promptReg.variable} ${promptMed.variable} flex min-h-screen grow flex-col bg-[#f2f2f2] antialiased dark:bg-[#1a1a1a]`}>
                 <Navbar />
-                    <div className="mt-12 lg:mt-0 flex flex-col flex-grow flex-1">
+                    <div className="mt-12 flex flex-1 grow flex-col lg:mt-0">
                         {children} 
                     </div>
                 <SiteFooter />

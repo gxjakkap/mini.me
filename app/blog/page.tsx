@@ -18,8 +18,8 @@ const getData = cache(getAllBlogInfo)
 export default async function BlogHome() {
     const data = await getData()
     return (
-        <main className="flex flex-col flex-grow mx-auto lg:ml-[25%] lg:mr-0 pt-4 lg:pt-10 lg:mt-14 w-3/4 lg:w-1/2 pb-28">
-            <h1 className="flex gap-x-1 font-inter font-medium text-4xl lg:text-3xl lg:mt-4 text-center lg:text-left">My Blog <BookOpenIcon className="w-9 lg:w-8 pt-1" /></h1>
+        <main className="mx-auto flex w-3/4 grow flex-col pb-28 pt-4 lg:ml-[25%] lg:mr-0 lg:mt-14 lg:w-1/2 lg:pt-10">
+            <h1 className="flex gap-x-1 text-center font-inter text-4xl font-medium lg:mt-4 lg:text-left lg:text-3xl">My Blog <BookOpenIcon className="w-9 pt-1 lg:w-8" /></h1>
             <div className="flex w-full">
                 <Suspense fallback={BlogListLoading()}>
                     <BlogContentList data={data} />

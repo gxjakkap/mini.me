@@ -35,20 +35,21 @@ export default function SiteFooter() {
             setNpdata(res)
             console.log(npdata)
         })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
-        <footer className="w-1/2 flex flex-col lg:flex-row mx-auto pb-5 text-[#a5a5a5] dark:text-zinc-500">
+        <footer className="mx-auto flex w-1/2 flex-col pb-5 text-[#a5a5a5] dark:text-zinc-500 lg:flex-row">
             <span className="mx-auto lg:ml-0 lg:mr-auto">jakka - 2024</span>
             {(npdata.title.length > 0) ? (
-                <div className="hover:underline font-inter">
-                    <a href={npdata.song_url} target="blank" rel="noopener,noreferrer" className="flex flex-col text-center lg:flex-row gap-x-[0.2rem]">
+                <div className="font-inter hover:underline">
+                    <a href={npdata.song_url} target="blank" rel="noopener,noreferrer" className="flex flex-col gap-x-[0.2rem] text-center lg:flex-row">
                         <div>listening to</div> 
                         <div>{npdata.title} by {npdata.artist}</div>
                     </a>
                 </div>
             ) : (<></>)}
-            <div className="flex mx-auto lg:ml-auto lg:mr-0 gap-x-3 font-inter underline">
+            <div className="mx-auto flex gap-x-3 font-inter underline lg:ml-auto lg:mr-0">
                 <a href="https://github.com/gxjakkap" target="_blank" rel="noopener,noreferrer">github</a>
                 <a href="https://tree.guntxjakka.me/" target="_blank" rel="noopener,noreferrer">links</a>
             </div>
